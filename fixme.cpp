@@ -104,7 +104,7 @@ tm SessionAgregator::getCurrentTime() {
     return timeinfo;
 }
 
-Status SessionAgregator::getUserRights(std::string &userLogin) {
+Status SessionAgregator::getUserRights(std::string &userLogin) { //Какая-то строчка кода
     auto userRights = getUserStatusFromCollection(userLogin);
     return UserStatus::getRightByStr(userRights);
 }
