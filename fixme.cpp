@@ -83,11 +83,10 @@ const std::string SessionAgregator::returnSessionIfAlreadyExists(utility::string
     return "";
 }
 
-
-std::string &SessionAgregator::generateUuid(std::string &authInStr) {
-    auto uuid = boost::uuids::random_generator();
-    boost::uuids::uuid uuidAuth = boost::uuids::random_generator()();
-    authInStr = boost::lexical_cast<std::__cxx11::string>(uuidAuth);
+std::string& SessionAgregator::generateUuid(std::string& authInStr) {
+    auto generator = boost::uuids::random_generator();
+    boost::uuids::uuid uuidAuth = generator();
+    authInStr = boost::uuids::to_string(uuidAuth);
     return authInStr;
 }
 
